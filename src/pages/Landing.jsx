@@ -64,14 +64,33 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-offwhite text-black">
+      {/* Header */}
+      <header className="absolute top-0 left-0 right-0 z-50 w-full bg-burgundy/90 backdrop-blur-md border-b border-biscuit/15 shadow-sm py-4">
+        <div className="mx-auto max-w-5xl px-6 flex items-center justify-between">
+          {/* Right side: Logo & Brand Name */}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              <span className="text-xl font-bold tracking-tight text-white font-arabic">Aya Club</span>
+              <span className="rounded-full border border-biscuit/30 bg-biscuit/10 px-2 py-0.5 text-xs font-semibold text-biscuit">
+                بيتا
+              </span>
+            </div>
+          </div>
+
+          {/* Left side: Action Button */}
+          <div>
+            <a
+              href="#signup"
+              className="rounded-full bg-biscuit px-5 py-2 text-sm font-semibold text-burgundy transition-all duration-300 hover:bg-white hover:text-burgundy shadow-sm hover:shadow-md"
+            >
+              انضمي الآن
+            </a>
+          </div>
+        </div>
+      </header>
+
       {/* Hero */}
       <section className="relative flex w-full items-end overflow-hidden pb-16 pt-32 sm:h-[600px] sm:items-center sm:py-0">
-        <div className="absolute left-0 top-0 z-20 flex items-center gap-2 p-6 md:p-10">
-          <span className="text-2xl font-bold tracking-tight text-white">Aya Club</span>
-          <span className="rounded-full border border-white/40 px-2 py-0.5 text-xs font-semibold text-white/80">
-            Beta
-          </span>
-        </div>
         <div className="absolute inset-0">
           <img
             src={heroImage}
