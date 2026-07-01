@@ -51,13 +51,15 @@ export default function SignupForm({ onSuccess }) {
     'w-full rounded-lg border border-black/15 bg-white px-4 py-3 text-black placeholder:text-black/40 focus:border-burgundy focus:outline-none focus:ring-2 focus:ring-burgundy/20 transition'
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-5" name="waitlist" data-netlify="true" noValidate>
+      <input type="hidden" name="form-name" value="waitlist" />
       <div>
         <label className="mb-1.5 block text-sm font-medium text-black/80" htmlFor="name">
           الاسم
         </label>
         <input
           id="name"
+          name="name"
           className={inputClass}
           placeholder="سارة"
           value={form.name}
@@ -72,6 +74,7 @@ export default function SignupForm({ onSuccess }) {
         </label>
         <input
           id="email"
+          name="email"
           type="email"
           className={inputClass}
           placeholder="example@gmail.com"
@@ -87,6 +90,7 @@ export default function SignupForm({ onSuccess }) {
         </label>
         <input
           id="phone"
+          name="phone"
           className={inputClass}
           placeholder="05XXXXXXXX"
           value={form.phone}
