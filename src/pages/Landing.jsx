@@ -6,7 +6,7 @@ import heroImage from '../assets/images/hero.png'
 const STEPS = [
   {
     icon: Award,
-    title: 'اشتركي مع Aya Club',
+    title: 'كوني عضوة في نادي آيا',
     body: 'انضمي إلى نادي آيا الحصري لبدء تجربتك المميزة.',
   },
   {
