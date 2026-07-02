@@ -7,8 +7,8 @@ import ayaLogo from '../assets/images/aya-logo.svg'
 const STEPS = [
   {
     icon: Award,
-    title: 'اشتركي في عضوية آيا',
-    body: 'انضمي إلى نادي آيا واحصلي على العديد من المميزات.',
+    title: 'اشتركي في نادي آيا',
+    body: 'انضمي إلى نادي آيا واحصلي على مزايا حصرية',
   },
   {
     icon: ShoppingBag,
@@ -18,17 +18,17 @@ const STEPS = [
   {
     icon: Truck,
     title: 'استلمي',
-    body: 'نقوم بتوصيل القطع المختارة إلى باب منزلك.',
+    body: 'نوصلك لباب البيت مجانا',
   },
   {
     icon: Shirt,
     title: 'جربي',
-    body: 'جربي العبايات إلى ٣ أيام.',
+    body: 'جربي براحتك لمدة 3 أيام',
   },
   {
     icon: Heart,
     title: 'قرري',
-    body: 'ادفعي مقابل العباية اللي تعجبك، ورجعي باقي العبايات.',
+    body: 'ادفعي مقابل العباية الي تعجبك وناخذ الباقي',
   },
 ]
 
@@ -36,7 +36,7 @@ const PERKS = [
   {
     icon: Shirt,
     title: 'جربي قبل تشترين',
-    body: 'اطلبي عباياتك وجربيها في منزلك قبل الدفع',
+    body: 'اطلبي عباياتك وجربيها في البيت قبل الدفع',
   },
   {
     icon: Truck,
@@ -46,12 +46,12 @@ const PERKS = [
   {
     icon: Gift,
     title: 'خصومات حصرية',
-    body: 'عروض خاصة وحصرية لأعضاء النادي فقط',
+    body: 'عروض خاصة وحصرية لأعضاء النادي ',
   },
   {
     icon: Star,
     title: 'وصول مبكر',
-    body: 'كوني أول من يتسوق المجموعات الجديدة',
+    body: 'توصلك التصاميم قبل الكل',
   },
 ]
 
@@ -164,10 +164,10 @@ export default function Landing() {
         <div className="mx-auto max-w-5xl px-6">
           <div className="mb-14 flex flex-col items-center text-center">
             <div className="mb-2 flex items-center justify-center gap-3">
-              <span className="block h-px w-4 bg-biscuit" />
-              <span className="font-serif-display font-bold text-white">Club</span>
-              <img src={ayaLogo} className="h-5 w-auto brightness-0 invert opacity-80" alt="Aya logo" />
-              <span className="block h-px w-4 bg-biscuit" />
+              <span className="block h-px w-6 bg-biscuit" />
+              <span className="text-2xl font-bold tracking-tight text-white font-serif-display">Club</span>
+              <img src={ayaLogo} className="h-10 w-auto brightness-0 invert opacity-90" alt="Aya logo" />
+              <span className="block h-px w-6 bg-biscuit" />
             </div>
             <h2 className="text-2xl font-bold sm:text-3xl text-white font-serif-display">مميزات قادمة قريبًا</h2>
           </div>
