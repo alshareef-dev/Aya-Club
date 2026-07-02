@@ -1,3 +1,23 @@
+import { Award, ShoppingBag, Truck } from 'lucide-react'
+
+const DEMO_STEPS = [
+  {
+    icon: Award,
+    title: 'الخطوة الأولى',
+    body: 'تفاصيل الخطوة الأولى التجريبية هنا.',
+  },
+  {
+    icon: ShoppingBag,
+    title: 'الخطوة الثانية',
+    body: 'تفاصيل الخطوة الثانية التجريبية هنا.',
+  },
+  {
+    icon: Truck,
+    title: 'الخطوة الثالثة',
+    body: 'تفاصيل الخطوة الثالثة التجريبية هنا.',
+  },
+]
+
 const COLORS = [
   { name: 'Burgundy', hex: '#6B1F3A', className: 'bg-burgundy', text: 'text-white' },
   { name: 'Green', hex: '#3E5626', className: 'bg-green', text: 'text-white' },
@@ -106,6 +126,48 @@ export default function DesignSystem() {
             </div>
             <h3 className="mb-1 text-lg font-semibold">اختاري عبايتك</h3>
             <p className="text-sm text-black/60">اختاري إلى 3 عبايات واطلبيها بدون ما تدفعين.</p>
+          </div>
+        </Section>
+
+        <Section title="مخطط الخطوات (Timeline)">
+          <div className="relative rounded-2xl border border-black/10 bg-white p-6 md:p-12 overflow-hidden">
+            <div className="relative">
+              {/* Horizontal Line for Desktop */}
+              <div className="absolute top-10 left-[10%] right-[10%] h-[2px] bg-gradient-to-l from-burgundy/15 via-biscuit/50 to-burgundy/15 hidden md:block" />
+
+              {/* Vertical Line for Mobile */}
+              <div className="absolute right-6 top-6 bottom-6 w-[2px] bg-gradient-to-b from-burgundy/15 via-biscuit/50 to-burgundy/15 md:hidden" />
+
+              <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-6">
+                {DEMO_STEPS.map((step, index) => (
+                  <div
+                    key={step.title}
+                    className="relative flex flex-row md:flex-col items-start md:items-center text-right md:text-center gap-6 md:gap-0 flex-1 group w-full"
+                  >
+                    {/* Icon Circle */}
+                    <div className="relative flex-none md:mb-6">
+                      <div className="relative z-10 flex h-12 w-12 md:h-20 md:w-20 items-center justify-center rounded-full border-2 border-biscuit bg-white text-burgundy transition-all duration-500 group-hover:scale-110 group-hover:bg-burgundy group-hover:text-white group-hover:border-burgundy shadow-md group-hover:shadow-xl">
+                        <step.icon className="h-5 w-5 md:h-8 md:w-8" />
+                      </div>
+                      {/* Badge Number */}
+                      <span className="absolute -top-1.5 -right-1.5 md:-top-2 md:-right-2 z-20 flex h-5 w-5 md:h-6 md:w-6 items-center justify-center rounded-full bg-biscuit text-[9px] md:text-[10px] font-bold text-burgundy shadow-sm border border-white">
+                        0{index + 1}
+                      </span>
+                    </div>
+
+                    {/* Text Details */}
+                    <div className="flex-1 md:contents">
+                      <h3 className="text-base md:text-lg font-bold text-black transition-colors duration-300 group-hover:text-burgundy mt-1 md:mt-0">
+                        {step.title}
+                      </h3>
+                      <p className="mt-1 md:mt-3 text-sm leading-relaxed text-black/60 md:max-w-[180px]">
+                        {step.body}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </Section>
       </div>

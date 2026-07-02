@@ -40,6 +40,46 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Thmanyah Serif Display";
+  src: url("./assets/fonts/thmanyahserifdisplay-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Serif Display";
+  src: url("./assets/fonts/thmanyahserifdisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Serif Display";
+  src: url("./assets/fonts/thmanyahserifdisplay-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Serif Display";
+  src: url("./assets/fonts/thmanyahserifdisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Thmanyah Serif Display";
+  src: url("./assets/fonts/thmanyahserifdisplay-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-burgundy: #6b1f3a;
   --color-green: #3e5626;
@@ -49,6 +89,7 @@
   --color-white: #ffffff;
   --color-pink: #c16770;
   --font-arabic: "Thmanyah Sans", "Segoe UI", Tahoma, sans-serif;
+  --font-serif-display: "Thmanyah Serif Display", Georgia, serif;
 }
 
 body {
