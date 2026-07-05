@@ -1,18 +1,13 @@
 import { useState } from 'react'
-import { Award, Heart, ShoppingBag, Truck, Shirt, Wallet, Star, Gift } from 'lucide-react'
+import { Heart, ShoppingBag, Truck, Shirt } from 'lucide-react'
 import SignupForm from '../components/SignupForm.jsx'
 import heroImage from '../assets/images/hero.png'
 import ayaLogo from '../assets/images/aya-logo.svg'
 
 const STEPS = [
   {
-    icon: Award,
-    title: 'اشتركي في نادي آيا',
-    body: 'انضمي إلى نادي آيا واحصلي على مزايا حصرية',
-  },
-  {
     icon: ShoppingBag,
-    title: 'اختاري عباياتك',
+    title: 'اختاري',
     body: 'اختاري 3 عبايات بدون دفع',
   },
   {
@@ -32,28 +27,6 @@ const STEPS = [
   },
 ]
 
-const PERKS = [
-  {
-    icon: Shirt,
-    title: 'جربي قبل تشترين',
-    body: 'اطلبي عباياتك وجربيها في البيت قبل الدفع',
-  },
-  {
-    icon: Truck,
-    title: 'شحن مجاني',
-    body: 'توصيل سريع ومجاني لجميع طلباتك',
-  },
-  {
-    icon: Gift,
-    title: 'خصومات حصرية',
-    body: 'عروض خاصة وحصرية لأعضاء النادي ',
-  },
-  {
-    icon: Star,
-    title: 'وصول مبكر',
-    body: 'توصلك التصاميم قبل الكل',
-  },
-]
 
 export default function Landing() {
   const [submitted, setSubmitted] = useState(null)
@@ -65,16 +38,7 @@ export default function Landing() {
         {/* Top bar inside Hero */}
         <div className="absolute top-0 left-0 right-0 z-20 w-full py-6">
           <div className="mx-auto max-w-5xl px-6 flex justify-start">
-            {/* Right side (start in RTL): Logo, name, and badge stacked */}
-            <div className="flex flex-col items-start gap-0">
-              <div className="flex items-center gap-4">
-                <span className="text-3xl font-bold tracking-tight text-white font-serif-display">Club</span>
-                <img src={ayaLogo} className="h-14 w-auto brightness-0 invert" alt="Aya logo" />
-              </div>
-              <span className="rounded-full border border-white/30 bg-white/10 px-2 py-[1px] text-[9px] font-semibold text-white -mt-2.5 z-10">
-                إطلاق تجريبي
-              </span>
-            </div>
+            <img src={ayaLogo} className="h-14 w-auto brightness-0 invert" alt="Aya logo" />
           </div>
         </div>
         <div className="absolute inset-0">
@@ -93,30 +57,27 @@ export default function Landing() {
               جربي قبل تشترين
             </h1>
             <p className="text-lg leading-relaxed text-white/90">
-              انضمي لنادي آيا واستفيدي من المميزات والعروض الحصرية
+              خدمة حصرية لعدد محدود من العميلات
             </p>
             <a
               href="#signup"
               className="mt-2 rounded-full border border-white px-8 py-3 font-semibold text-white transition-colors duration-300 hover:bg-white hover:text-black"
             >
-              انضمي الحين
+              جربي الآن
             </a>
           </div>
         </div>
       </section>
 
       {/* How it works */}
-      <section className="w-full bg-white py-20">
+      <section className="w-full bg-white pt-10 pb-20">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mb-16 flex flex-col items-center text-center">
             <h2 className="flex items-center justify-center gap-3 text-2xl font-bold text-burgundy sm:text-3xl font-serif-display">
               <span className="block h-px w-6 bg-burgundy/40" />
-              جربي قبل تشترين
+              بكل بساطة
               <span className="block h-px w-6 bg-burgundy/40" />
             </h2>
-            <p className="mt-4 text-sm font-semibold text-burgundy/80">
-              ميزة حصرية لأعضاء نادي آيا
-            </p>
           </div>
 
           <div className="relative">
@@ -159,40 +120,9 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Perks footer */}
-      <section className="w-full bg-black py-16 text-white">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="mb-14 flex flex-col items-center text-center">
-            <div className="mb-2 flex items-center justify-center gap-3">
-              <span className="block h-px w-6 bg-biscuit" />
-              <span className="text-2xl font-bold tracking-tight text-white font-serif-display">Club</span>
-              <img src={ayaLogo} className="h-10 w-auto brightness-0 invert opacity-90" alt="Aya logo" />
-              <span className="block h-px w-6 bg-biscuit" />
-            </div>
-            <h2 className="text-2xl font-bold sm:text-3xl text-white font-serif-display">مميزات قادمة قريبًا</h2>
-          </div>
-
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-stretch">
-            {PERKS.map((perk) => (
-              <div
-                key={perk.title}
-                className="flex flex-1 flex-row items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-right transition-all duration-300 hover:bg-white/10 md:flex-col md:items-center md:rounded-3xl md:p-8 md:text-center"
-              >
-                <div className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white/10 md:mb-6 md:h-16 md:w-16">
-                  <perk.icon className="h-5 w-5 text-white md:h-7 md:w-7" />
-                </div>
-                <div className="md:contents">
-                  <h3 className="text-sm font-semibold md:mb-3 md:text-lg">{perk.title}</h3>
-                  <p className="text-xs text-white/80 md:text-sm">{perk.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Waitlist form */}
-      <section className="relative w-full bg-burgundy py-24 text-white overflow-hidden text-center" id="signup">
+      <section className="relative w-full bg-burgundy pt-12 pb-24 text-white overflow-hidden text-center" id="signup">
         {/* Decorative background circles */}
         <div className="absolute right-0 top-0 h-96 w-96 -translate-y-1/3 translate-x-1/4 rounded-full bg-white/5 pointer-events-none" />
         <div className="absolute bottom-0 left-0 h-80 w-80 -translate-x-1/4 translate-y-1/3 rounded-full bg-white/5 pointer-events-none" />
@@ -209,15 +139,11 @@ export default function Landing() {
             </div>
           ) : (
             <>
-              <span className="mb-4 flex items-center justify-center gap-2 text-sm font-semibold text-biscuit">
-                <span className="block h-px w-4 bg-biscuit" />
-                قريباً
-                <span className="block h-px w-4 bg-biscuit" />
-              </span>
-              <h2 className="mb-4 text-2xl font-bold sm:text-3xl font-serif-display">انضمي للقائمة</h2>
-              <p className="mx-auto mb-10 max-w-md text-white/90">
-                كوني من أوائل من يستمتع بتجربة التسوق الفاخرة الجديدة.
-              </p>
+              <h2 className="mb-10 flex items-center justify-center gap-3 text-2xl font-bold text-white sm:text-3xl font-serif-display">
+                <span className="block h-px w-6 bg-white/40" />
+                سجلي لطلب الخدمة
+                <span className="block h-px w-6 bg-white/40" />
+              </h2>
               <div className="mx-auto max-w-lg rounded-2xl bg-white p-6 text-right sm:p-8">
                 <SignupForm onSuccess={setSubmitted} />
               </div>
@@ -227,31 +153,19 @@ export default function Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="w-full bg-black border-t border-white/10 py-12 text-white/60">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Right side (RTL start): Brand Logo and copyright */}
-            <div className="flex flex-col items-center md:items-start gap-3">
-              <div className="flex items-center gap-3">
-                <span className="text-2xl font-bold tracking-tight text-white font-serif-display">Club</span>
-                <img src={ayaLogo} className="h-10 w-auto brightness-0 invert opacity-90" alt="Aya logo" />
-              </div>
-              <p className="text-xs text-white/40">
-                © {new Date().getFullYear()} Aya Club. جميع الحقوق محفوظة.
-              </p>
-            </div>
-
-            {/* Left side (RTL end): Links */}
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm">
-              <a
-                href="https://www.aya.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors duration-300"
-              >
-                موقع آيا
-              </a>
-            </div>
+      <footer className="relative z-10 w-full bg-black border-t border-white/10 py-12 text-white/60">
+        <div className="mx-auto max-w-5xl px-6 flex flex-col items-center gap-6">
+          <img src={ayaLogo} className="h-10 w-auto brightness-0 invert opacity-90" alt="Aya logo" />
+          <div className="flex items-center gap-6">
+            <a href="https://aya.go.link/3xk61" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-100">
+              <img src="/footer/Asset 3.svg" className="h-6 w-[72px] opacity-80" alt="Asset 3" />
+            </a>
+            <a href="https://aya.go.link/3xk61" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-100">
+              <img src="/footer/Asset 2.svg" className="h-6 w-[72px] opacity-80" alt="Asset 2" />
+            </a>
+            <a href="https://www.aya.app" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-100">
+              <img src="/footer/Asset 1.svg" className="h-6 w-[72px] opacity-80" alt="Asset 1" />
+            </a>
           </div>
         </div>
       </footer>

@@ -104,7 +104,7 @@ export default function SignupForm({ onSuccess }) {
         disabled={submitting}
         className="w-full rounded-full bg-burgundy px-6 py-3.5 text-base font-semibold text-white transition hover:opacity-90 disabled:opacity-60"
       >
-        {submitting ? 'جارِ الإرسال...' : 'انضمي للقائمة'}
+        {submitting ? 'جارِ الإرسال...' : 'سجلي الآن'}
       </button>
     </form>
   )
