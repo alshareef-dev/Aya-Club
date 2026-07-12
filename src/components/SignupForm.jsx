@@ -9,7 +9,6 @@ function encodeForm(data) {
 export default function SignupForm({ onSuccess }) {
   const [form, setForm] = useState({
     name: '',
-    email: '',
     phone: '',
   })
   const [errors, setErrors] = useState({})
@@ -22,8 +21,6 @@ export default function SignupForm({ onSuccess }) {
   function validate() {
     const next = {}
     if (!form.name.trim()) next.name = 'الرجاء إدخال الاسم'
-    if (!form.email.trim()) next.email = 'الرجاء إدخال البريد الإلكتروني'
-    else if (!/^\S+@\S+\.\S+$/.test(form.email)) next.email = 'الرجاء إدخال بريد إلكتروني صحيح'
     if (!form.phone.trim()) next.phone = 'الرجاء إدخال رقم الجوال'
     else if (!/^05\d{8}$/.test(form.phone.trim()))
       next.phone = 'رقم الجوال يجب أن يبدأ بـ 05 ويتكون من 10 أرقام'
@@ -68,21 +65,6 @@ export default function SignupForm({ onSuccess }) {
         {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
       </div>
 
-      <div>
-        <label className="mb-1.5 block text-sm font-medium text-black/80" htmlFor="email">
-          حساب آيا
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          className={inputClass}
-          placeholder="example@gmail.com"
-          value={form.email}
-          onChange={(e) => update('email', e.target.value)}
-        />
-        {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
-      </div>
 
       <div>
         <label className="mb-1.5 block text-sm font-medium text-black/80" htmlFor="phone">
